@@ -1,0 +1,78 @@
+{
+  "name": "Resource",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the resource"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "medical_supplies",
+        "food_water",
+        "shelter_materials",
+        "transportation",
+        "communication",
+        "equipment",
+        "volunteers",
+        "funding"
+      ],
+      "description": "Category of resource"
+    },
+    "quantity": {
+      "type": "number",
+      "description": "Available quantity"
+    },
+    "unit": {
+      "type": "string",
+      "description": "Unit of measurement (kg, pcs, people, etc.)"
+    },
+    "location": {
+      "type": "string",
+      "description": "Current location of the resource"
+    },
+    "provider_ngo": {
+      "type": "string",
+      "description": "NGO providing this resource"
+    },
+    "availability": {
+      "type": "string",
+      "enum": [
+        "available",
+        "reserved",
+        "deployed",
+        "unavailable"
+      ],
+      "default": "available",
+      "description": "Current availability status"
+    },
+    "condition": {
+      "type": "string",
+      "enum": [
+        "new",
+        "good",
+        "fair",
+        "needs_repair"
+      ],
+      "default": "good",
+      "description": "Condition of the resource"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Expiry date (for perishable items)"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the resource"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "quantity",
+    "location",
+    "provider_ngo"
+  ]
+}

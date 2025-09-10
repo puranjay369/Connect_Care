@@ -1,0 +1,89 @@
+{
+  "name": "Emergency",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Brief description of the emergency"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the emergency situation"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location of the emergency"
+    },
+    "coordinates": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        }
+      }
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "default": "medium",
+      "description": "Severity level of the emergency"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "natural_disaster",
+        "medical_emergency",
+        "fire",
+        "accident",
+        "violence",
+        "infrastructure",
+        "other"
+      ],
+      "description": "Type of emergency"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "responding",
+        "resolved",
+        "monitoring"
+      ],
+      "default": "active",
+      "description": "Current status of the emergency"
+    },
+    "affected_people": {
+      "type": "number",
+      "description": "Estimated number of people affected"
+    },
+    "priority_needs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of urgent needs"
+    },
+    "contact_person": {
+      "type": "string",
+      "description": "Contact person for this emergency"
+    },
+    "contact_phone": {
+      "type": "string",
+      "description": "Emergency contact phone number"
+    }
+  },
+  "required": [
+    "title",
+    "location",
+    "severity",
+    "category"
+  ]
+}

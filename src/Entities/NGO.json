@@ -1,0 +1,79 @@
+{
+  "name": "NGO",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the NGO organization"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the NGO's mission and activities"
+    },
+    "contact_email": {
+      "type": "string",
+      "format": "email",
+      "description": "Primary contact email"
+    },
+    "contact_phone": {
+      "type": "string",
+      "description": "Primary contact phone number"
+    },
+    "website": {
+      "type": "string",
+      "description": "Organization website"
+    },
+    "location": {
+      "type": "string",
+      "description": "Primary location/address"
+    },
+    "service_areas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Geographic areas they serve"
+    },
+    "specializations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "disaster_relief",
+          "medical_aid",
+          "food_security",
+          "shelter",
+          "search_rescue",
+          "logistics",
+          "mental_health",
+          "education",
+          "child_protection",
+          "elder_care",
+          "infrastructure"
+        ]
+      },
+      "description": "Areas of specialization"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Available resources and capabilities"
+    },
+    "volunteer_count": {
+      "type": "number",
+      "description": "Number of active volunteers"
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the NGO is verified"
+    }
+  },
+  "required": [
+    "name",
+    "contact_email",
+    "specializations"
+  ]
+}
